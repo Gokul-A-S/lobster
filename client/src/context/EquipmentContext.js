@@ -1,8 +1,8 @@
 import { createContext ,useReducer} from "react";
 
-export const WorkoutContext=createContext()
+export const EquipmentContext=createContext()
 
-export const workoutsReducer=(state,action)=>{
+export const EquipmentReducer=(state,action)=>{
     switch(action.type){
         case 'SET_EQP':{
             return{
@@ -26,14 +26,14 @@ export const workoutsReducer=(state,action)=>{
 
 }
 
-export const WorkoutContextProvider=({children})=>{
+export const EquipmentContextProvider=({children})=>{
 
-    const [state,dispatch]=useReducer(workoutsReducer,{workouts:null})
+    const [state,dispatch]=useReducer(EquipmentReducer,{workouts:null})
 
     return(
-        <WorkoutContext.Provider value={{...state,dispatch}}>
+        <EquipmentContext.Provider value={{...state,dispatch}}>
             {children}
-        </WorkoutContext.Provider>
+        </EquipmentContext.Provider>
             
     )
 }

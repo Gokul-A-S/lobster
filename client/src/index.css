@@ -126,3 +126,27 @@ header a {
 .workout-form:hover{
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
+
+.home .container {
+  background-color:#ffffff; 
+  height: 150px;
+  width: 150px;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  
+ }
+
+.home a{
+  text-decoration: none;
+  color: #fff;
+  background: var(--primary);
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 20px 0;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
