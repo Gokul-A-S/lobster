@@ -4,6 +4,10 @@ const Navbar = () => {
         <header>
             <div className="container">
                 <Link to="/"><h1>Lobster</h1></Link>
+                <div className='nav-buttons'>
+                    <Link to='/home'>Home</Link>
+                    <Link to='/'>Logout</Link>
+                </div>
             </div>
         </header>
     )
