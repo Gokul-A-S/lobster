@@ -1,39 +1,45 @@
 import { useEffect } from "react";
-import WorkoutDetails from "../components/EquipmentDetails";
-import WorkoutForm from "../components/EquipmentForm";
-import { useWorkoutsContext } from "../hooks/useWorkoutContext";
+import EquipmentDetails from "../components/EquipmentDetails";
+import EquipmentForm from "../components/EquipmentForm";
+import { useEquipmentsContext } from "../hooks/useEquipmentContext";
 const Home = () => {
 
-   const {workouts,dispatch}=useWorkoutsContext()
+    const { workouts, dispatch } = useEquipmentsContext()
 
     useEffect(() => {
         const getWorkouts = async () => {
-            const response = await fetch('http://localhost:4096/api/equipments')
-            const json = await response.json()
+            try {
+                const response = await fetch('http://localhost:4096/api/equipments')
+                const json = await response.json()
 
-            if (response.ok) {
-                dispatch({type:'SET_EQP',payload:json})
+                if (response.ok) {
+                    dispatch({ type: 'SET_EQP', payload: json })
+                }
+                else {
+                    console.log(json)
+                }
             }
-            else {
-                alert(json)
+            catch (error) {
+                console.log(error.message)
             }
+
         }
         getWorkouts()
-        //console.log(workouts)
 
-    }, [])
+
+    }, [dispatch])
 
     return (
         <div className="home">
             <div className="workouts">
-                {workouts && workouts.map((workout,index) => (
+                {workouts && workouts.map((workout, index) => (
                     <div key={index}>
-                        <WorkoutDetails  workout={workout} key={workout._id}/>
+                        <EquipmentDetails workout={workout} key={workout._id} />
                     </div>
                 ))
                 }
             </div>
-            <WorkoutForm />
+            <EquipmentForm />
         </div>
     )
 }
