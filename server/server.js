@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const dotenv = require("dotenv");
 const equipmentRoutes = require("./routes/Equipments");
+const UserRoutes = require("./routes/User");
 const { connectDB } = require('./connectDB/connect')
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 
 
 app.use("/api/equipments", equipmentRoutes);
+app.use("/api/user",UserRoutes)
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on ${process.env.PORT}`);
