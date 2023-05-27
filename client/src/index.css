@@ -95,7 +95,36 @@ header a {
   background: var(--primary);
   color: #fff;
   cursor: pointer;
+}
+.welcome{
+  width: 40%;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position:relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }  
+.welcome a{
+  text-decoration: none;
+  color: #fff;
+  background: var(--primary);
+  padding: 10px 20px 10px 20px;
+  border-radius: 4px;
+  display:inline-block;
+  margin: 20px 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  
+}
+
+.welcome h1{
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
 
 .workout-form button:hover {
   background: #e0e0e0;
@@ -164,37 +193,28 @@ header a {
   
   
 }
-.login-form{
-  background: #ffffff;
-  width: 400px;
-  border-radius: 4px;
-  margin: 20px auto;
+form.register, form.login {
+  max-width: 400px;
+  margin: 40px auto;
   padding: 20px;
-  position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-  
-}
-.login-form label{
-  font-size: 0.9em;
-  color: #555;
-}
-.login-form input{
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #f1f1f1;
+  background: #fff;
   border-radius: 4px;
-  font-size: 1em;
 }
-.login-form button{
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 0;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 1em;
+  box-sizing: border-box;
+}
+form button {
   background: var(--primary);
+  border: 0;
   color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
   cursor: pointer;
-
 }

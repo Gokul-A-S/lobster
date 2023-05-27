@@ -1,16 +1,14 @@
 const Login=()=>{
-    return(
-        <div className="login">
-            
-            <form className="login-form">
+    return(    
+            <form className="login">
             <h1>Login</h1>
-                <label>Username</label>
+                <label>ID:</label>
                 <input type="text" required/>
-                <label>Password</label>
+                <label>Password:</label>
                 <input type="password" required/>
                 <button type="submit">Login</button>
             </form>
-        </div>
+        
     )
 }
 export default Login;
