@@ -1,9 +1,19 @@
 import { useEquipmentsContext } from "../hooks/useEquipmentContext"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { useAuthContext } from "../hooks/useAuthContext"
+
 const WorkoutDetails = ({ workout }) => {
     const { dispatch } = useEquipmentsContext()
+    const {user}=useAuthContext()
     const handleClick = async () => {
+        if(!user){
+            console.log("Authorization Required")
+            return
+        }
         const response = await fetch(`http://localhost:4096/api/equipments/${workout._id}`, {
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            },
             method: 'DELETE'
         })
         const json = await response.json()

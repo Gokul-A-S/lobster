@@ -2,14 +2,20 @@ import { useEffect } from "react";
 import EquipmentDetails from "../components/EquipmentDetails";
 import EquipmentForm from "../components/EquipmentForm";
 import { useEquipmentsContext } from "../hooks/useEquipmentContext";
+import { useAuthContext } from '../hooks/useAuthContext'
 const Home = () => {
 
     const { workouts, dispatch } = useEquipmentsContext()
+    const { user } = useAuthContext()
 
     useEffect(() => {
         const getWorkouts = async () => {
             try {
-                const response = await fetch('http://localhost:4096/api/equipments')
+                const response = await fetch('http://localhost:4096/api/equipments', {
+                    headers:{
+                        'Authorization':`Bearer ${user.token}`
+                    }
+                })
                 const json = await response.json()
 
                 if (response.ok) {
@@ -24,10 +30,15 @@ const Home = () => {
             }
 
         }
-        getWorkouts()
+        if (user) {
+            getWorkouts()
+        }
+        else{
+            console.log("Authorization required")
+        }
 
 
-    }, [dispatch])
+    }, [dispatch,user])
 
     return (
         <div className="home">

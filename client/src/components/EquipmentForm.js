@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useEquipmentsContext } from "../hooks/useEquipmentContext"
+import { useAuthContext } from "../hooks/useAuthContext"
 
 const EquipmentForm = () => {
     const { dispatch } = useEquipmentsContext()
+    const {user}=useAuthContext()
     const [id, setID] = useState('')
     const [name, setName] = useState('')
     const [type, setType] = useState('')
@@ -16,11 +18,19 @@ const EquipmentForm = () => {
 
     const handleSumbit = async (e) => {
         e.preventDefault()
+        if(!user){
+            setError("Authorization Required")
+            return
+        }
         const equipment = { id, name, type, brand, dop, warranty, condition, location, lab }
         const response = await fetch('http://localhost:4096/api/equipments', {
             method: 'POST',
             body: JSON.stringify(equipment),
-            headers: { 'Content-Type': 'application/json' }
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
+
+            }
         })
         const json = await response.json()
         if (!response.status !== 200) {

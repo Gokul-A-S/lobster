@@ -1,24 +1,26 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Main from './pages/Main';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Welcome from './pages/Welcome';
+import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
+  const {user}=useAuthContext()
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
         <div className='pages'>
           <Routes>
-              <Route path="/" exact element={<Welcome />} />
-              <Route path="/home" exact element={<Home />} />
-              <Route path="/main" exact element={<Main />} />
-              <Route path="/login" exact element={<Login/>} />
-              <Route path="/register" exact element={<Register/>} />
-              <Route path="*" element={<h1>404 Not Found</h1>} />
+            <Route path="/" exact element={<Welcome />} />
+            <Route path="/home" exact element={user?<Home />:<Navigate to='/login'/>} />
+            <Route path="/main" exact element={user?<Main />:<Navigate to='/login'/>} />
+            <Route path="/login" exact element={user?<Home/>:<Login/>} />
+            <Route path="/register" exact element={user?<Home/>:<Register />} />
+            <Route path="*" element={<h1>404 Not Found</h1>} />
 
 
 
