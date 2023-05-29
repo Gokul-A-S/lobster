@@ -8,7 +8,7 @@ const createEquipment = async (req, res) => {
         res.status(200).json(equipment)
     }
     catch (error) {
-        console.error(error.message)
+        res.status(400).json({error:error.message})
     }
 }
 
@@ -19,7 +19,7 @@ const getEquipments = async (req, res) => {
         res.status(200).json(equipment)
     }
     catch (error) {
-        console.error(error.message)
+        return res.status(400).json(error.message)
     }
 }
 

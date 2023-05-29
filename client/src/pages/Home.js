@@ -8,7 +8,12 @@ const Home = () => {
                 <h3>Main Stock Register</h3>
                 <Link to="/main">Main</Link>
             </div>
-            
+            <div className="container">
+
+                <h3>Labs</h3>
+                <Link to="/lab">Labs</Link>
+            </div>
+
         </div>
     )
 }

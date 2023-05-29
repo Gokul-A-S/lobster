@@ -10,10 +10,6 @@ const LabSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    type: {
-        type: String,
-        required: true,
-    },
     fic: {
         type: String,
         required: true,

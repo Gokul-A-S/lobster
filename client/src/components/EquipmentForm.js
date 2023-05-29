@@ -33,7 +33,7 @@ const EquipmentForm = () => {
             }
         })
         const json = await response.json()
-        if (!response.status !== 200) {
+        if (!response.ok) {
             setError(json.error)
         }
         if (response.ok) {

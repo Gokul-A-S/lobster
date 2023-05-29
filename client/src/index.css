@@ -161,9 +161,10 @@ header a {
   height: 150px;
   width: 150px;
   padding: 20px;
-  align-items: center;
   justify-content: space-between;
   border-radius: 10px;
+  flex-direction: column;
+  display: flex;
   
  }
 
@@ -174,10 +175,12 @@ header a {
   padding: 10px 20px;
   border-radius: 4px;
   display: inline-block;
+  width: 50%;
   margin: 20px 0;
   font-size: 0.9em;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
+  margin-top: auto;
 }
 .nav-buttons a {
   background: #fff;

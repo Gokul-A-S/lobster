@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Welcome from './pages/Welcome';
+import Lab from './pages/Lab';
 import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/main" exact element={user?<Main />:<Navigate to='/login'/>} />
             <Route path="/login" exact element={user?<Home/>:<Login/>} />
             <Route path="/register" exact element={user?<Home/>:<Register />} />
+            <Route path="/lab" exact element={user?<Lab/>:<Login />} />
             <Route path="*" element={<h1>404 Not Found</h1>} />
 
 
