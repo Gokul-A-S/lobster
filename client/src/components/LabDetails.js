@@ -1,6 +1,24 @@
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import { useLabContext } from '../hooks/useLabContext'
 const LabDetails=({labs})=>{
+    const {dispatch}=useLabContext()
     const handleClick = async () => {
+        try {
+            const response = await fetch(`http://localhost:4096/api/labs/${labs._id}`, {
+                method: 'DELETE',
+            })
+            const json = await response.json()
+            if (response.ok) {
+                dispatch({ type: 'DELETE_LAB', payload: json })
+            }
+            else {
+                console.log(json)
+            }
+        }
+        catch (error) {
+            console.log(error.message)
+        }
+        
         
     }
     return (

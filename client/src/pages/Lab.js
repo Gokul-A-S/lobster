@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useLabContext } from "../hooks/useLabContext"
 import LabDetails from "../components/LabDetails"
+import LabForm from "../components/LabForm"
 const Lab = () => {
     const { labs, dispatch } = useLabContext()
 
@@ -32,6 +33,7 @@ const Lab = () => {
                     <LabDetails labs={labs} key={labs._id} />
                 </div>))}
         </div>
+        <LabForm/>
     </div>)
 }
 export default Lab

@@ -125,7 +125,9 @@ header a {
   margin: 0 0 10px 0;
 }
 
-
+.workout-form input{
+  width: 100%;
+}
 .workout-form button:hover {
   background: #e0e0e0;
 }
