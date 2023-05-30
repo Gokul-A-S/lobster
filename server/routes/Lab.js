@@ -3,7 +3,7 @@ const requireAuth = require('../middleware/requireAuth')
 const { getLabs, getLab, createLab, deleteLab, updateLab } = require('../controllers/LabController')
 const router = express.Router()
 
-//router.use(requireAuth)
+router.use(requireAuth)
 
 router.get('/', getLabs)
 
