@@ -229,3 +229,9 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+.dashboard{
+  display: inline-flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+}

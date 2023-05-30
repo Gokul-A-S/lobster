@@ -1,11 +1,20 @@
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { useLabContext } from '../hooks/useLabContext'
-const LabDetails=({labs})=>{
-    const {dispatch}=useLabContext()
+import { useAuthContext } from '../hooks/useAuthContext'
+const LabDetails = ({ labs }) => {
+    const { user } = useAuthContext()
+    const { dispatch } = useLabContext()
     const handleClick = async () => {
         try {
+            if(!user){
+                console.log("Authorization required")
+                return
+            }
             const response = await fetch(`http://localhost:4096/api/labs/${labs._id}`, {
                 method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${user.token}`,
+                }
             })
             const json = await response.json()
             if (response.ok) {
@@ -18,11 +27,11 @@ const LabDetails=({labs})=>{
         catch (error) {
             console.log(error.message)
         }
-        
-        
+
+
     }
     return (
-<div className="workout-details">
+        <div className="workout-details">
             <h4>{labs.name}</h4>
             <p><strong>ID:</strong>{labs.code}</p>
             <p><strong>Faculty:</strong>{labs.fic}</p>

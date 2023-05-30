@@ -2,13 +2,18 @@ import { useEffect } from "react"
 import { useLabContext } from "../hooks/useLabContext"
 import LabDetails from "../components/LabDetails"
 import LabForm from "../components/LabForm"
+import { useAuthContext } from '../hooks/useAuthContext'
 const Lab = () => {
     const { labs, dispatch } = useLabContext()
-
+    const { user } = useAuthContext()
     useEffect(() => {
         const getLabs = async () => {
             try {
-                const response = await fetch('http://localhost:4096/api/labs')
+                const response = await fetch('http://localhost:4096/api/labs',{
+                    headers:{
+                        'Authorization': `Bearer ${user.token}`,
+                    }
+                })
                 const json = await response.json()
 
                 if (response.ok) {
@@ -23,8 +28,14 @@ const Lab = () => {
             }
 
         }
-        getLabs()
-    },[dispatch])
+        if (user){
+            getLabs()
+        }
+        else{
+            console.log("Authorization required")
+        }
+
+    },[dispatch,user])
     
     return (<div className="home">
         <div className="workouts">

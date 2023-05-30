@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useLabContext } from "../hooks/useLabContext";
+import {useAuthContext} from "../hooks/useAuthContext";
 
 
 const LabForm = () => {
+    const { user } = useAuthContext();
     const { dispatch } = useLabContext();
     const [code, setCode] = useState("");
     const [name, setName] = useState("");
@@ -11,14 +13,18 @@ const LabForm = () => {
 
     const handleSumbit = async (e) => {
         e.preventDefault();
+        if (!user) {
+            setError("Authorization Required");
+            return;
+        }
         const lab = { code, name, fic };
         const response = await fetch("http://localhost:4096/api/labs", {
             method: "POST",
             body: JSON.stringify(lab),
             headers: {
-                "Content-Type": "application/json",
-                
-            },
+                'Content-Type': "application/json",
+                'Authorization': `Bearer ${user.token}`,
+            },  
         });
         const json = await response.json();
         if (!response.ok) {
