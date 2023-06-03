@@ -9,6 +9,33 @@ const Home = () => {
     const { workouts, dispatch } = useEquipmentsContext()
     const { user } = useAuthContext()
     useEffect(() => {
+        const getLabs = async () => {
+            try {
+                const response = await fetch('http://localhost:4096/api/labs',{
+                    headers:{
+                        'Authorization': `Bearer ${user.token}`,
+                    }
+                })
+                const json = await response.json()
+
+                if (response.ok) {
+                    dispatch({ type: 'SET_LAB', payload: json })
+                }
+                else {
+                    console.log(json)
+                }
+            }
+            catch (error) {
+                console.log(error.message)
+            }
+
+        }
+        if (user){
+            getLabs()
+        }
+        else{
+            console.log("Authorization required")
+        }
         const getWorkouts = async () => {
             try {
                 const response = await fetch('http://localhost:4096/api/equipments', {
@@ -61,7 +88,7 @@ const Home = () => {
             <div className="workouts">
                 {eqpCopy && eqpCopy.map((eqpCopy, index) => (
                     <div key={index}>
-                        <EquipmentDetails workout={eqpCopy} key={eqpCopy._id} />
+                        <EquipmentDetails workout={eqpCopy} key={eqpCopy._id}  />
                     </div>
                 ))
                 }

@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useEquipmentsContext } from "../hooks/useEquipmentContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
-const EquipmentForm = () => {
+const EquipmentForm = ({labNo}) => {
     const { dispatch } = useEquipmentsContext()
     const {user}=useAuthContext()
     const [id, setID] = useState('')

@@ -1,16 +1,16 @@
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { useLabContext } from '../hooks/useLabContext'
 import { useAuthContext } from '../hooks/useAuthContext'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 const LabDetails = ({ labs }) => {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const { user } = useAuthContext()
     const { dispatch } = useLabContext()
-    
+
     const handleClick = async () => {
-   
+
         try {
-            if(!user){
+            if (!user) {
                 console.log("Authorization required")
                 return
             }
@@ -34,19 +34,19 @@ const LabDetails = ({ labs }) => {
 
 
     }
-    const changePage =  () => {
+    const changePage = () => {
         const getWorkouts = async () => {
             try {
                 const response = await fetch(`http://localhost:4096/api/labs/filter/${labs.code}`, {
-                    method:'POST',
-                    headers:{
-                        'Authorization':`Bearer ${user.token}`
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${user.token}`
                     }
                 })
                 const json = await response.json()
 
                 if (response.ok) {
-                    navigate(`/main`, { state: {  eqp: json } })
+                    navigate(`/main`, { state: { eqp: json } })
 
                 }
                 else {
@@ -60,11 +60,11 @@ const LabDetails = ({ labs }) => {
         if (user) {
             getWorkouts()
         }
-        else{
+        else {
             console.log("Authorization required")
         }
-        
-        
+
+
     }
     return (
         <div className="workout-details">
@@ -73,7 +73,9 @@ const LabDetails = ({ labs }) => {
             <p><strong>Faculty:</strong>{labs.fic}</p>
             <p>{formatDistanceToNow(new Date(labs.createdAt), { addSuffix: true })}</p>
             <span className="material-symbols-outlined" onClick={handleClick}>Delete</span>
-            <button onClick={changePage}>View</button>
+            <div>
+                <button onClick={changePage}>View</button>
+            </div>
         </div>
     )
 }

@@ -6,14 +6,17 @@
   --primary: #1aac83;
   --error: #e7195a;
 }
+
 body {
   background: #f1f1f1;
   margin: 0;
   font-family: "Poppins";
 }
+
 header {
   background: #fff;
 }
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -22,11 +25,13 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
+
 header a {
   color: #333;
   text-decoration: none;
 }
-.pages{
+
+.pages {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
@@ -38,24 +43,28 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
+
 .workout-details {
   background: #fff;
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
+
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
+
 .workout-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
+
 .workout-details span {
   position: absolute;
   top: 20px;
@@ -67,14 +76,14 @@ header a {
   color: #333;
 }
 
-.workout-form{
+.workout-form {
   background: #ffffff;
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-  
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+
 }
 
 .workout-form input {
@@ -85,6 +94,7 @@ header a {
   border-radius: 4px;
   font-size: 1em;
 }
+
 .workout-form button {
   width: 100%;
   padding: 10px;
@@ -96,38 +106,41 @@ header a {
   color: #fff;
   cursor: pointer;
 }
-.welcome{
+
+.welcome {
   width: 40%;
   text-align: center;
   background: #ffffff;
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
-  position:relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-}  
-.welcome a{
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.welcome a {
   text-decoration: none;
   color: #fff;
   background: var(--primary);
   padding: 10px 20px 10px 20px;
   border-radius: 4px;
-  display:inline-block;
+  display: inline-block;
   margin: 20px 20px;
   font-size: 0.9em;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
-  
+
 }
 
-.welcome h1{
+.welcome h1 {
   text-align: center;
   margin: 0 0 10px 0;
 }
 
-.workout-form input{
+.workout-form input {
   width: 100%;
 }
+
 .workout-form button:hover {
   background: #e0e0e0;
 }
@@ -137,29 +150,34 @@ header a {
   color: #555;
 
 }
+
 .workout-form h3 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
+
 .workout-form .error {
   color: var(--error);
   font-size: 0.8em;
   margin: 0 0 10px 0;
 }
+
 .workout-details span:hover {
   background: #e7195a;
   color: #fff;
 }
-.workout-details:hover{
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-} 
-.workout-form:hover{
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+
+.workout-details:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.workout-form:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .home .container {
-  background-color:#ffffff; 
+  background-color: #ffffff;
   height: 150px;
   width: 150px;
   padding: 20px;
@@ -167,10 +185,10 @@ header a {
   border-radius: 10px;
   flex-direction: column;
   display: flex;
-  
- }
 
-.home a{
+}
+
+.home a {
   text-decoration: none;
   color: #fff;
   background: var(--primary);
@@ -184,6 +202,7 @@ header a {
   transition: all 0.2s ease-in-out;
   margin-top: auto;
 }
+
 .nav-buttons a {
   background: #fff;
   color: var(--primary);
@@ -194,15 +213,18 @@ header a {
   cursor: pointer;
   font-size: 1em;
   margin: 10px 10px;
-  
+
 }
-form.register, form.login {
+
+form.register,
+form.login {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
   background: #fff;
   border-radius: 4px;
 }
+
 input {
   padding: 10px;
   margin-top: 10px;
@@ -212,6 +234,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 form button {
   background: var(--primary);
   border: 0;
@@ -221,6 +244,7 @@ form button {
   border-radius: 4px;
   cursor: pointer;
 }
+
 div.error {
   padding: 10px;
   background: #ffefef;
@@ -229,22 +253,81 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
-.dashboard{
+
+.dashboard {
   display: inline-flex;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
 
 }
-div.workout-details button{
+
+div.lab-list {
+  display: inline-flex;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 0;
+  padding: 0.5rem;
+  margin: 0rem 0rem 0rem 38rem;
+  gap: 5px;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.lab-list button {
   background: var(--primary);
   border: 0;
   color: #fff;
-  padding: 10px;
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
-  margin: 10px 0;
-  width: 10%;
-  margin-left: 90%;
-
 }
+
+
+
+.workout-details button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.workout-details div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.workout-details select {
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  appearance: none;
+  background-color: #fff;
+  background-image: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.workout-details select:focus {
+  outline: none;
+  border-color: #777;
+}
+
+.workout-details select::-ms-expand {
+  display: none;
+}
+
+.workout-details select option {
+  font-weight: normal;
+}
+
+.workout-details p {
+  font-size: 0.9rem;
+  line-height: 1;
+  color: #333;
+  margin: 0 0 1em;
+  display: flex;
+}
+
