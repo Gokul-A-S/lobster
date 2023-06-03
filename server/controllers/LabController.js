@@ -1,3 +1,4 @@
+const Equipment = require('../models/Equipment')
 const Lab =require('../models/Lab')
 const mongoose = require('mongoose')
 const createLab=async (req,res)=>{
@@ -70,7 +71,17 @@ const updateLab=async(req,res)=>{
     }
 
 }
+const filterLab=async(req,res)=>{
+    const {id}=req.params
+    try{
+        const labs=await Equipment.find({lab:id})
+        res.status(200).json(labs)
+    }
+    catch(error){
+        res.status(400).json({error:error.message})
+    }
+}
 
-module.exports={getLabs,getLab,createLab,deleteLab,updateLab}
+module.exports={getLabs,getLab,createLab,deleteLab,updateLab,filterLab}
 
 
