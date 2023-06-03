@@ -1,13 +1,45 @@
 import { useEquipmentsContext } from "../hooks/useEquipmentContext"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { useAuthContext } from "../hooks/useAuthContext"
-import { useLabContext } from "../hooks/useLabContext"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 const WorkoutDetails = ({ workout }) => {
     const [selectedOption, setSelectedOption] = useState(null)
+    const [labs, setLabs] = useState([])
     const { dispatch } = useEquipmentsContext()
     const { user } = useAuthContext()
-    const { labs } = useLabContext()
+    useEffect(() => {
+        const getLabs = async () => {
+            try {
+                const response = await fetch('http://localhost:4096/api/labs',{
+                    headers:{
+                        'Authorization': `Bearer ${user.token}`,
+                    }
+                })
+                const json = await response.json()
+
+                if (response.ok) {
+                    setLabs(json)
+                }
+                else {
+                    console.log(json)
+                }
+            }
+            catch (error) {
+                console.log(error.message)
+            }
+
+        }
+        if (user){
+            getLabs()
+        }
+        else{
+            console.log("Authorization required")
+        }
+
+        }
+    , [user])
+
+   
     const handleClick = async () => {
         if (!user) {
             console.log("Authorization Required")
