@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLabContext } from "../hooks/useLabContext";
 import {useAuthContext} from "../hooks/useAuthContext";
-
+import { useEffect } from "react";
 
 const LabForm = () => {
     const { user } = useAuthContext();
@@ -10,6 +10,37 @@ const LabForm = () => {
     const [name, setName] = useState("");
     const [fic, setFic] = useState("");
     const [error, setError] = useState(null);
+    useEffect(() => {
+        const getWorkouts = async () => {
+            try {
+                const response = await fetch('http://localhost:4096/api/equipments', {
+                    headers:{
+                        'Authorization':`Bearer ${user.token}`
+                    }
+                })
+                const json = await response.json()
+
+                if (response.ok) {
+                    dispatch({ type: 'SET_EQP', payload: json })
+                }
+                else {
+                    console.log(json)
+                }
+            }
+            catch (error) {
+                console.log(error.message)
+            }
+
+        }
+        if (user) {
+            getWorkouts()
+        }
+        else{
+            console.log("Authorization required")
+        }
+
+
+    }, [dispatch,user])
 
     const handleSumbit = async (e) => {
         e.preventDefault();

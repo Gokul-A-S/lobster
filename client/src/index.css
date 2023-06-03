@@ -235,3 +235,16 @@ div.error {
   gap: 50px;
 
 }
+div.workout-details button{
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px 0;
+  width: 10%;
+  margin-left: 90%;
+
+}

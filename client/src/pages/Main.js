@@ -1,13 +1,13 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import EquipmentDetails from "../components/EquipmentDetails";
 import EquipmentForm from "../components/EquipmentForm";
 import { useEquipmentsContext } from "../hooks/useEquipmentContext";
 import { useAuthContext } from '../hooks/useAuthContext'
 const Home = () => {
-
+    const eqpCopy=useLocation().state?.eqp
     const { workouts, dispatch } = useEquipmentsContext()
     const { user } = useAuthContext()
-
     useEffect(() => {
         const getWorkouts = async () => {
             try {
@@ -40,6 +40,7 @@ const Home = () => {
 
     }, [dispatch,user])
 
+   if(!eqpCopy){
     return (
         <div className="home">
             <div className="workouts">
@@ -54,4 +55,21 @@ const Home = () => {
         </div>
     )
 }
+    else{
+        return(
+            <div className="home">
+            <div className="workouts">
+                {eqpCopy && eqpCopy.map((eqpCopy, index) => (
+                    <div key={index}>
+                        <EquipmentDetails workout={eqpCopy} key={eqpCopy._id} />
+                    </div>
+                ))
+                }
+            </div>
+            <EquipmentForm />
+        </div>
+        )
+    }
+   }
+
 export default Home;

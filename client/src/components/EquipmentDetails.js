@@ -24,6 +24,7 @@ const WorkoutDetails = ({ workout }) => {
 
     }
     return (
+        
         <div className="workout-details">
             <h4>{workout.name}</h4>
             <p><strong>Purchase:</strong>{workout.dop}</p>
