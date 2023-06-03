@@ -15,7 +15,7 @@ const EquipmentForm = () => {
     const [location, setLocation] = useState('')
     const [lab, setLab] = useState('')
     const [error, setError] = useState(null)
-    console.log(user.token)
+    
 
     const handleSumbit = async (e) => {
         e.preventDefault()
