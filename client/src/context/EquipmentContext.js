@@ -19,6 +19,11 @@ export const EquipmentReducer=(state,action)=>{
                 workouts:state.workouts.filter((workout)=>workout._id!==action.payload._id)
             }
         }
+        case 'UPDATE_EQP':{
+            return{
+                workouts:[action.payload]
+            }
+        }
         default:{
             return state
         }

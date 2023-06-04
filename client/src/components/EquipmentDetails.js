@@ -3,15 +3,18 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { useAuthContext } from "../hooks/useAuthContext"
 import { useEffect, useState } from "react"
 const WorkoutDetails = ({ workout }) => {
-    const [selectedOption, setSelectedOption] = useState(null)
+    const [selectedOption, setSelectedOption] = useState('')
     const [labs, setLabs] = useState([])
-    const { dispatch } = useEquipmentsContext()
+    const {dispatch } = useEquipmentsContext()
     const { user } = useAuthContext()
     useEffect(() => {
+
+
+
         const getLabs = async () => {
             try {
-                const response = await fetch('http://localhost:4096/api/labs',{
-                    headers:{
+                const response = await fetch('http://localhost:4096/api/labs', {
+                    headers: {
                         'Authorization': `Bearer ${user.token}`,
                     }
                 })
@@ -29,17 +32,17 @@ const WorkoutDetails = ({ workout }) => {
             }
 
         }
-        if (user){
+        if (user) {
             getLabs()
         }
-        else{
+        else {
             console.log("Authorization required")
         }
 
-        }
-    , [user])
+    }
+        , [user])
 
-   
+
     const handleClick = async () => {
         if (!user) {
             console.log("Authorization Required")
@@ -59,7 +62,30 @@ const WorkoutDetails = ({ workout }) => {
 
     }
     const allocate = async (e) => {
-        console.log(selectedOption)
+        try{
+            const response = await fetch(`http://localhost:4096/api/equipments/${workout._id}`, {
+            method: 'PATCH',
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization': `Bearer ${user.token}`
+            },
+
+            body: JSON.stringify({ lab: selectedOption })
+
+        })
+        const json = await response.json()
+        if (response.ok) {
+           console.log('Allocation Successful')
+           dispatch({ type: 'SET_EQP', payload: json })
+        }
+        if (!response.ok) {
+            console.log(json)
+        }
+
+        }
+        catch(error){
+            console.log(error.message)
+        }
     }
     return (
 
