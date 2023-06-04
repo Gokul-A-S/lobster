@@ -79,7 +79,7 @@ const WorkoutDetails = ({ workout }) => {
         if (response.ok) {
            console.log('Allocation Successful')
            console.log(json)
-           navigate(`/main`, { state: { eqp: json } })
+           navigate(`/main`, { state: { eqp: json },replace:true })
           
         }
         if (!response.ok) {
