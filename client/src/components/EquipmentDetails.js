@@ -8,7 +8,7 @@ const WorkoutDetails = ({ workout }) => {
     const {dispatch } = useEquipmentsContext()
     const { user } = useAuthContext()
     useEffect(() => {
-        
+
 
 
         const getLabs = async () => {
@@ -76,6 +76,7 @@ const WorkoutDetails = ({ workout }) => {
         const json = await response.json()
         if (response.ok) {
            console.log('Allocation Successful')
+           window.location.href = '/lab'
            dispatch({ type: 'SET_EQP', payload: json })
         }
         if (!response.ok) {
