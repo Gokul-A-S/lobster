@@ -66,6 +66,10 @@ const LabDetails = ({ labs }) => {
 
 
     }
+    const gotoLabs = () => {
+        console.log(labs)
+        navigate(`/lab/${labs._id}`,{state:{labs}})
+    }
     return (
         <div className="workout-details">
             <h4>{labs.name}</h4>
@@ -74,7 +78,8 @@ const LabDetails = ({ labs }) => {
             <p>{formatDistanceToNow(new Date(labs.createdAt), { addSuffix: true })}</p>
             <span className="material-symbols-outlined" onClick={handleClick}>Delete</span>
             <div>
-                <button onClick={changePage}>View</button>
+                <button onClick={gotoLabs}>About </button>
+                <button onClick={changePage}>Equipments</button>
             </div>
         </div>
     )

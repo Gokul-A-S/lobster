@@ -295,6 +295,7 @@ div.lab-list {
 .workout-details div {
   display: flex;
   justify-content: flex-end;
+  gap: 10px;
 }
 
 .workout-details select {
@@ -331,7 +332,7 @@ div.lab-list {
   display: flex;
 }
 
-.equipment-view{
+.equipment-view,.lab{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -342,7 +343,7 @@ div.lab-list {
   border-radius: 4px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
-.equipment-view h2{
+.equipment-view,.lab h2{
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
