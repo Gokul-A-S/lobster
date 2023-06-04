@@ -79,7 +79,7 @@ const LabDetails = ({ labs }) => {
             <span className="material-symbols-outlined" onClick={handleClick}>Delete</span>
             <div>
                 <button onClick={gotoLabs}>About </button>
-                <button onClick={changePage}>Equipments</button>
+                <button onClick={changePage}>Equipment</button>
             </div>
         </div>
     )
