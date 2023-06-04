@@ -7,6 +7,7 @@ import Register from './pages/Register';
 import Welcome from './pages/Welcome';
 import Lab from './pages/Lab';
 import { useAuthContext } from './hooks/useAuthContext';
+import Equipment from './pages/Equipment';
 
 function App() {
   const {user}=useAuthContext()
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" exact element={<Welcome />} />
             <Route path="/home" exact element={user?<Home />:<Navigate to='/login'/>} />
             <Route path="/main" exact element={user?<Main />:<Navigate to='/login'/>} />
+            <Route path="/equipment" exact element={user?<Equipment />:<Navigate to='/login'/>} />
             <Route path="/login" exact element={user?<Home/>:<Login/>} />
             <Route path="/register" exact element={user?<Home/>:<Register />} />
             <Route path="/lab" exact element={user?<Lab/>:<Login />} />

@@ -91,6 +91,10 @@ const WorkoutDetails = ({ workout }) => {
             console.log(error.message)
         }
     }
+    const gotoEquipment = () => {
+        navigate(`/equipment`, { state: {workout} })
+
+    }
     return (
 
         <div className="workout-details">
@@ -109,6 +113,7 @@ const WorkoutDetails = ({ workout }) => {
                         <option key={lab._id} value={lab.code}>{lab.code}</option>
                     ))}
                 </select>
+                <button onClick={gotoEquipment}>View</button>
                 <button onClick={allocate}>Allocate</button>
             </div>
         </div>
