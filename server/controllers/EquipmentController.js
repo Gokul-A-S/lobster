@@ -66,7 +66,7 @@ const updateEquipment = async (req, res) => {
         if(!equipment){
             return res.status(404).json("No such Equipment")
         }
-        const changedEquipment=await Equipment.find({}).sort({ createdAt: -1 })
+        const changedEquipment=await Equipment.find({lab:equipment.lab})
         res.status(200).json(changedEquipment)
     }
     catch(error){

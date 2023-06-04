@@ -2,7 +2,9 @@ import { useEquipmentsContext } from "../hooks/useEquipmentContext"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { useAuthContext } from "../hooks/useAuthContext"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 const WorkoutDetails = ({ workout }) => {
+    const navigate = useNavigate()
     const [selectedOption, setSelectedOption] = useState('')
     const [labs, setLabs] = useState([])
     const {dispatch } = useEquipmentsContext()
@@ -76,8 +78,9 @@ const WorkoutDetails = ({ workout }) => {
         const json = await response.json()
         if (response.ok) {
            console.log('Allocation Successful')
-           window.location.href = '/lab'
-           dispatch({ type: 'SET_EQP', payload: json })
+           console.log(json)
+           navigate(`/main`, { state: { eqp: json } })
+          
         }
         if (!response.ok) {
             console.log(json)
