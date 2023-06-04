@@ -12,7 +12,7 @@ const Home = () => {
         
         const getWorkouts = async () => {
             try {
-                const response = await fetch('http://localhost:4096/api/equipments', {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments`, {
                     headers:{
                         'Authorization':`Bearer ${user.token}`
                     }

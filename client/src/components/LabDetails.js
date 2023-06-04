@@ -14,7 +14,7 @@ const LabDetails = ({ labs }) => {
                 console.log("Authorization required")
                 return
             }
-            const response = await fetch(`http://localhost:4096/api/labs/${labs._id}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/labs/${labs._id}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${user.token}`,
@@ -37,7 +37,7 @@ const LabDetails = ({ labs }) => {
     const changePage = () => {
         const getWorkouts = async () => {
             try {
-                const response = await fetch(`http://localhost:4096/api/labs/filter/${labs.code}`, {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/labs/filter/${labs.code}`, {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${user.token}`

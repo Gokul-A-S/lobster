@@ -15,7 +15,7 @@ const WorkoutDetails = ({ workout }) => {
 
         const getLabs = async () => {
             try {
-                const response = await fetch('http://localhost:4096/api/labs', {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/labs`, {
                     headers: {
                         'Authorization': `Bearer ${user.token}`,
                     }
@@ -50,7 +50,7 @@ const WorkoutDetails = ({ workout }) => {
             console.log("Authorization Required")
             return
         }
-        const response = await fetch(`http://localhost:4096/api/equipments/${workout._id}`, {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments/${workout._id}`, {
             headers: {
                 'Authorization': `Bearer ${user.token}`
             },
@@ -65,7 +65,7 @@ const WorkoutDetails = ({ workout }) => {
     }
     const allocate = async (e) => {
         try{
-            const response = await fetch(`http://localhost:4096/api/equipments/${workout._id}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments/${workout._id}`, {
             method: 'PATCH',
             headers:{
                 'Content-Type':'application/json',

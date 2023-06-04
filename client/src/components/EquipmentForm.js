@@ -24,7 +24,7 @@ const EquipmentForm = ({labNo}) => {
             return
         }
         const equipment = { id, name, type, brand, dop, warranty, condition, location, lab }
-        const response = await fetch('http://localhost:4096/api/equipments', {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments`, {
             method: 'POST',
             body: JSON.stringify(equipment),
             headers: {

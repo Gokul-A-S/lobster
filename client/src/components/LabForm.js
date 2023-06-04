@@ -13,7 +13,7 @@ const LabForm = () => {
     useEffect(() => {
         const getWorkouts = async () => {
             try {
-                const response = await fetch('http://localhost:4096/api/equipments', {
+                const response = await fetch(`${process.env.SERVER_URI}/api/equipments`, {
                     headers:{
                         'Authorization':`Bearer ${user.token}`
                     }
@@ -49,7 +49,7 @@ const LabForm = () => {
             return;
         }
         const lab = { code, name, fic };
-        const response = await fetch("http://localhost:4096/api/labs", {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/labs`, {
             method: "POST",
             body: JSON.stringify(lab),
             headers: {

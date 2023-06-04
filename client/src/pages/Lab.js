@@ -9,7 +9,7 @@ const Lab = () => {
     useEffect(() => {
         const getLabs = async () => {
             try {
-                const response = await fetch('http://localhost:4096/api/labs',{
+                const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/labs`,{
                     headers:{
                         'Authorization': `Bearer ${user.token}`,
                     }
