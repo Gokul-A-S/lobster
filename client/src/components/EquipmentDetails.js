@@ -8,7 +8,7 @@ const WorkoutDetails = ({ workout }) => {
     const {dispatch } = useEquipmentsContext()
     const { user } = useAuthContext()
     useEffect(() => {
-
+        
 
 
         const getLabs = async () => {
