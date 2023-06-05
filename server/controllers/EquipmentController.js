@@ -2,9 +2,9 @@ const Equipment = require('../models/Equipment')
 const mongoose = require('mongoose')
 
 const createEquipment = async (req, res) => {
-    const { id,name,type,brand,dop,warranty,condition,location,lab } = req.body
+    const { id,name,type,brand,processor,ram,hdd,dop,warranty,condition,location,lab } = req.body
     try {
-        const equipment = await Equipment.create({ id,name,type,brand,dop,warranty,condition,location,lab })
+        const equipment = await Equipment.create({ id,name,type,processor,ram,hdd,brand,dop,warranty,condition,location,lab })
         res.status(200).json(equipment)
     }
     catch (error) {

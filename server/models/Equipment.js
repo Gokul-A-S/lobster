@@ -14,6 +14,16 @@ const equipmentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    processor:{
+        type: String,
+
+    },
+    ram:{
+        type: String,
+    },
+    hdd:{
+        type: String,
+    },
     brand: {
         type: String,
         required: true,
@@ -30,6 +40,7 @@ const equipmentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+   
     location: {
         type: String,
         required: true,

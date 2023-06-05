@@ -8,6 +8,9 @@ const EquipmentForm = ({labNo}) => {
     const [id, setID] = useState('')
     const [name, setName] = useState('')
     const [type, setType] = useState('')
+    const [processor, setProcessor] = useState('')
+    const [ram, setRam] = useState('')
+    const [hdd, setHDD] = useState('')
     const [brand, setBrand] = useState('')
     const [dop, setDOP] = useState('')
     const [warranty, setWarranty] = useState('')
@@ -23,7 +26,7 @@ const EquipmentForm = ({labNo}) => {
             setError("Authorization Required")
             return
         }
-        const equipment = { id, name, type, brand, dop, warranty, condition, location, lab }
+        const equipment = { id, name, type,processor,ram,hdd, brand, dop, warranty, condition, location, lab }
         const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments`, {
             method: 'POST',
             body: JSON.stringify(equipment),
@@ -47,6 +50,9 @@ const EquipmentForm = ({labNo}) => {
             setCondition('')
             setLocation('')
             setLab('')
+            setProcessor('')
+            setRam('')
+            setHDD('')
             setError(null)
             console.log("Add Successful")
             dispatch({ type: 'CREATE_EQP', payload: json })
@@ -64,6 +70,12 @@ const EquipmentForm = ({labNo}) => {
                 <input type="text" required value={brand} onChange={(e) => setBrand(e.target.value)} />
                 <label>Type:</label>
                 <input type="text" required value={type} onChange={(e) => setType(e.target.value)} />
+                <label>Processor</label>
+                <input type="text"  value={processor} onChange={(e) => setProcessor(e.target.value)} />
+                <label>RAM</label>
+                <input type="text"  value={ram} onChange={(e) => setRam(e.target.value)} />
+                <label>HDD</label>
+                <input type="text"  value={hdd} onChange={(e) => setHDD(e.target.value)} />
                 <label>Purchase</label>
                 <input type="date" required value={dop} onChange={(e) => setDOP(e.target.value)} />
                 <label>Warranty</label>
