@@ -31,6 +31,10 @@ header a {
   text-decoration: none;
 }
 
+header span {
+  margin-right: 30px;
+}
+
 .pages {
   max-width: 1400px;
   padding: 20px;
