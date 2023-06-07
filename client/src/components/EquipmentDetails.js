@@ -1,5 +1,6 @@
 import { useEquipmentsContext } from "../hooks/useEquipmentContext"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import {format} from 'date-fns'
 import { useAuthContext } from "../hooks/useAuthContext"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
@@ -99,7 +100,7 @@ const WorkoutDetails = ({ workout }) => {
 
         <div className="workout-details">
             <h4>{workout.name}</h4>
-            <p><strong>Purchase:</strong>{workout.dop}</p>
+            <p><strong>Purchase:</strong>{format(new Date(workout.dop),'dd-MM-yyyy')}</p>
             <p><strong>Type:</strong>{workout.type}</p>
             <p><strong>ID:</strong>{workout.id}</p>
             <p><strong>Location:</strong>{workout.location}</p>
