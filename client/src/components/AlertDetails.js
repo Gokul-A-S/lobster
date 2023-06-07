@@ -1,5 +1,4 @@
 const AlertDetails = ({alerts}) => {
-    
     return (
         <div className="equipment-view">
                     <div className="image">

@@ -7,7 +7,7 @@ const getAlerts = async (req, res) => {
     $lt: [
         {
           $dateDiff: {
-            startDate: '$warranty',
+            startDate: '$expiry',
             endDate: currentDate,
             unit: 'month'
           }
