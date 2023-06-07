@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 import React,{useEffect,useState} from 'react'
 import AlertDetails from '../components/AlertDetails'
 const Alerts=()=>{
@@ -36,4 +35,4 @@ const Alerts=()=>{
     )
 }
 export default Alerts
->>>>>>> 071e58c (Added Alerts page and AlertDetails page)
+
