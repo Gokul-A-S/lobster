@@ -22,7 +22,7 @@ const Home = () => {
                 <div className="container">
 
                     <h3>Alerts</h3>
-                    <Link to="/*">Alerts</Link>
+                    <Link to="/alerts">Alerts</Link>
                 </div>
                 
             </div>
