@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import AlertDetails from '../components/AlertDetails'
+import e from 'express'
 const Alerts=()=>{
     const [alerts,setAlerts]=useState([])
     useEffect(()=>{
@@ -34,3 +35,4 @@ const Alerts=()=>{
     )
 }
 
+export default Alerts
