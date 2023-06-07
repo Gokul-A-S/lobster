@@ -3,10 +3,7 @@ import React, { useEffect } from 'react'
 function Alerts() {
 
     const [alerts,setAlerts]=useState([])
-    // useEffect(() => { 
-
-    // },[])
-
+    
     return (
                 <div className="equipment-view">
                     <div className="image">
