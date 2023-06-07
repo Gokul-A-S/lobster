@@ -43,11 +43,11 @@ const Reports = () => {
         description: equipment.code,
     }));
     const generateReport = async () => {
-        console.log(selectedOptions)
+        const ids = selectedOptions.map((option) => option.value)
         try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/reports`, {
                 method: "POST",
-                body: JSON.stringify(selectedOptions),
+                body: JSON.stringify(ids),
                 headers: {
                     'Content-Type': "application/json",
                     'Authorization': `Bearer ${user.token}`,
