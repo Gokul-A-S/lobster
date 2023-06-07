@@ -1,6 +1,8 @@
 const express=require('express')
 const router=express.Router()
 
-const {createReport}=require('../controllers/ReportController')
+const {getReport}=require('../controllers/ReportController')
 
-router.post('/',createReport)
+router.post('/',getReport)
+
+module.exports=router

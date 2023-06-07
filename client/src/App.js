@@ -10,6 +10,7 @@ import { useAuthContext } from './hooks/useAuthContext';
 import Equipment from './pages/Equipment';
 import LabView from './pages/LabView';
 import Alerts from './pages/Alerts';
+import Reports from './pages/Reports';
 
 function App() {
   const {user}=useAuthContext()
@@ -28,6 +29,7 @@ function App() {
             <Route path="/lab" exact element={user?<Lab/>:<Login />} />
             <Route path="/lab/:id" exact element={user?<LabView/>:<Login />} />
             <Route path="/alerts" exact element={user?<Alerts/>:<Login />} />
+            <Route path="/reports" exact element={user?<Reports/>:<Login />} />
             <Route path="*" element={<h1>404 Not Found</h1>} />
 
 
