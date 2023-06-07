@@ -13,7 +13,7 @@ const Equipment = () => {
                 <h2>Date of Purchase: <span className="value">{eqp.dop}</span></h2>
                 <h2>Warranty: <span className="value">{eqp.warranty}</span></h2>
                 <h2>Condition: <span className="value">{eqp.condition}</span></h2>
-                <h2>Location: <span className="value">{eqp.location}</span></h2>
+                <h2>Current Location: <span className="value">{eqp.location}</span></h2>
                 <h2>Lab: <span className="value">{eqp.lab}</span></h2>
 
             </div>
