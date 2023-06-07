@@ -3,6 +3,22 @@ import React, { useEffect } from 'react'
 function Alerts() {
 
     const [alerts,setAlerts]=useState([])
+    useEffect(()=>{
+        const getAlerts=async()=>{
+            try{
+                const response=await fetch(`${process.env.REACT_APP_SERVER_URI}/api/alerts`)
+                const json=await response.json()
+                if(response.ok){
+                    setAlerts(json)
+                }
+                if(!response.ok){
+                    console.log(json)
+                }
+            }
+        catch(error){
+            console.log(error.message)
+        }}
+    },[])
     
     return (
                 <div className="equipment-view">
