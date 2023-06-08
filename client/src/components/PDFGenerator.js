@@ -6,17 +6,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#E4E4E4',
   },
   section: {
-    margin: 10,
-    padding: 10,
+    width: "100%",
+    margin: "30px",
+    padding: "10px",
     flexGrow: 1,
   },
   text: {
-    fontSize: 12,
+    fontSize: "22px",
+    marginBottom: "40px",
+    marginTop: "0px",
   },
 });
 
 const PDFView = ({ data }) => (
-  <PDFViewer width={400} height={400}>
+  <PDFViewer width={600} height={600}>
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>

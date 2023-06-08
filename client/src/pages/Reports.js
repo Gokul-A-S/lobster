@@ -61,7 +61,7 @@ const Reports = () => {
             if (response.ok) {
                 console.log(json)
                 const data = json.map((item) => {
-                    return (item.id+"   "+item.name+"   "+item.type+"   "+item.brand+"   "+format(new Date(item.dop),'dd-MM-yyyy')+"   "+format(new Date(item.dop),'dd-MM-yyyy')+"   "+item.condition+"   "+item.location+"   "+item.lab)
+                    return ("Item ID: "+item.id+"\nItem Name: "+item.name+"\nItem Type: "+item.type+"\nItem Brand: "+item.brand+"\nDate of Purchase: "+format(new Date(item.dop),'dd-MM-yyyy')+"\nWarranty "+format(new Date(item.dop),'dd-MM-yyyy')+"\nCondition:  "+item.condition+"\nLocation "+item.location+"\nLab: "+item.lab)
                 })
                 setData(data)
 
@@ -75,17 +75,18 @@ const Reports = () => {
         }
     }
     return (
-        <div>
-            <h1>Reports</h1>
+        <div className='report-page'>
+            <h1>Report Generation</h1>
             <Select
                 isMulti
                 options={options}
                 value={selectedOptions}
                 onChange={handleSelectChange}
                 getOptionLabel={customOptionLabel}
+                className='select-bar'
             />
-            <button onClick={generateReport}>Generate Report</button>
             <PDFview data={data}/>
+            <button onClick={generateReport}>Generate Report</button>
             
         </div>
     )
