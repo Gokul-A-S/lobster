@@ -61,7 +61,7 @@ const Reports = () => {
             if (response.ok) {
                 console.log(json)
                 const data = json.map((item) => {
-                    return (item.id+"   "+item.name+"   "+item.type+"   "+item.brand+"  "+format(new Date(item.dop),'dd-MM-yyyy')+"  "+format(new Date(item.dop),'dd-MM-yyyy')+"    "+item.condition+"  "+item.location+"   "+item.lab)
+                    return (item.id+"   "+item.name+"   "+item.type+"   "+item.brand+"   "+format(new Date(item.dop),'dd-MM-yyyy')+"   "+format(new Date(item.dop),'dd-MM-yyyy')+"   "+item.condition+"   "+item.location+"   "+item.lab)
                 })
                 setData(data)
 
