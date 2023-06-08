@@ -217,7 +217,12 @@ header span {
   cursor: pointer;
   font-size: 1em;
   margin: 10px 10px;
+  transition: all 0.2s ease-in-out;
+}
 
+.nav-buttons a:hover {
+  background: var(--primary);
+  color: #fff;
 }
 
 form.register,
@@ -381,6 +386,7 @@ div.lab-list {
 .report-page h1 {
   color: var(--primary);
   margin-bottom: 20px;
+  margin-top: -12px;
   font-weight: bold;
   font-size: 40px;
 }
@@ -396,9 +402,13 @@ div.lab-list {
   background-color: var(--primary);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  font-size: 24px;
 }
 
 .report-page button:hover {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
 
+.select-bar {
+  margin-bottom: 50px;
 }
