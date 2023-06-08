@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useAuthContext } from '../hooks/useAuthContext'
 import Select from 'react-select'
+import PDFview from '../components/PDFGenerator';
+import {format} from 'date-fns'
+
 const Reports = () => {
     const [equipments, setEquipments] = useState([])
     const [selectedOptions, setSelectedOptions] = useState([])
+    const [data, setData] = useState([])
     const { user } = useAuthContext()
     useEffect(() => {
         const getEquipments = async () => {
@@ -53,8 +57,18 @@ const Reports = () => {
                     'Authorization': `Bearer ${user.token}`,
                 },
             })
-            const data = await response.json()
-            console.log(data)
+            const json = await response.json()
+            if (response.ok) {
+                console.log(json)
+                const data = json.map((item) => {
+                    return (item.id+"   "+item.name+"   "+item.type+"   "+item.brand+"  "+format(new Date(item.dop),'dd-MM-yyyy')+"  "+format(new Date(item.dop),'dd-MM-yyyy')+"    "+item.condition+"  "+item.location+"   "+item.lab)
+                })
+                setData(data)
+
+            }
+            if (!response.ok) {
+                console.log(data)
+            }
         }
         catch (err) {
             console.log(err)
@@ -71,6 +85,8 @@ const Reports = () => {
                 getOptionLabel={customOptionLabel}
             />
             <button onClick={generateReport}>Generate Report</button>
+            <PDFview data={data}/>
+            
         </div>
     )
 }
