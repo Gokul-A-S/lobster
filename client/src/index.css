@@ -370,3 +370,35 @@ div.lab-list {
 .lab-details h2{
   align-items: center;
 }
+
+.report-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.report-page h1 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.report-page button {
+  padding: 10px 20px;
+  display: block;
+  margin: 20px auto;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.report-page button:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+}

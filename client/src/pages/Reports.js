@@ -75,8 +75,8 @@ const Reports = () => {
         }
     }
     return (
-        <div>
-            <h1>Reports</h1>
+        <div className='report-page'>
+            <h1>Report Generation</h1>
             <Select
                 isMulti
                 options={options}
@@ -84,8 +84,8 @@ const Reports = () => {
                 onChange={handleSelectChange}
                 getOptionLabel={customOptionLabel}
             />
-            <button onClick={generateReport}>Generate Report</button>
             <PDFview data={data}/>
+            <button onClick={generateReport}>Generate Report</button>
             
         </div>
     )

@@ -6,8 +6,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#E4E4E4',
   },
   section: {
-    margin: 10,
-    padding: 10,
+    maxWidth: "100px",
+    margin: "30px",
+    padding: "10px",
     flexGrow: 1,
   },
   text: {
