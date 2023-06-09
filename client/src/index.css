@@ -48,6 +48,53 @@ header span {
   gap: 100px;
 }
 
+.home-pages {
+  margin: 0 auto;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  max-width: 1000px;
+}
+
+.home-pages .dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  height: 75vh;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.home-pages .container {
+  background-color: #ffffff;
+  height: 100%;
+  width: 95%;
+  padding: 20px;
+  justify-content: space-between;
+  border-radius: 10px;
+  flex-direction: column;
+  display: flex;
+}
+
+.home-pages a {
+  text-decoration: none;
+  color: #fff;
+  background: var(--primary);
+  padding: 10px 20px 10px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 20px 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.home-pages a:hover {
+  opacity: 0.8;
+}
+
 .workout-details {
   background: #fff;
   border-radius: 4px;
