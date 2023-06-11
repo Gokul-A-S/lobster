@@ -10,7 +10,7 @@ const Navbar = () => {
     return (
         <header>
             <div className="container">
-                <Link to="/"><h1>Lobster</h1></Link>
+                <Link to="/login"><h1>Lobster</h1></Link>
                 <div className='nav-buttons'>
                     {user && (
                         <div>
