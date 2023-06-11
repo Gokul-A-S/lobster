@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useEquipmentsContext } from "../hooks/useEquipmentContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
@@ -17,7 +17,27 @@ const EquipmentForm = () => {
     const [condition, setCondition] = useState('')
     const [location, setLocation] = useState('')
     const [lab, setLab] = useState('')
+    const [labs, setLabs] = useState([])
     const [error, setError] = useState(null)
+    useEffect(() => {
+        const getLab = async () => {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/labs`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${user.token}`
+                }
+            })
+            const json = await response.json()
+            if (!response.ok) {
+                setError(json.error)
+            }
+            if (response.ok) {
+                setLabs(json)
+                console.log(labs)
+            }
+        }
+        getLab()
+    }, [user.token])
 
 
     const handleSumbit = async (e) => {
@@ -90,7 +110,11 @@ const EquipmentForm = () => {
                 <label>Location</label>
                 <input type="text" required value={location} onChange={(e) => setLocation(e.target.value)} />
                 <label>Lab</label>
-                <input type="text" required value={lab} onChange={(e) => setLab(e.target.value)} />
+                <select value={lab} onChange={(e) => setLab(e.target.value)}>
+                    {labs.map((lab) => (
+                        <option key={lab._id} value={lab.code}>{lab.name}</option>
+                    ))}
+                </select>
                 <button>Add Equipment</button>
                 {error && <div className="error"><p>{error}</p>
                 </div>}
