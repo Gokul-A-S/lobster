@@ -60,7 +60,7 @@ header span {
 
 .home-pages .dashboard {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr ;
   gap: 80px;
   height: 50vh;
   justify-content: center;

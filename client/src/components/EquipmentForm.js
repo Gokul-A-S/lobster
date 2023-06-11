@@ -22,7 +22,6 @@ const EquipmentForm = () => {
     useEffect(() => {
         const getLab = async () => {
             const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/labs`, {
-                method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
@@ -33,11 +32,10 @@ const EquipmentForm = () => {
             }
             if (response.ok) {
                 setLabs(json)
-                console.log(labs)
             }
         }
         getLab()
-    }, [user.token, labs])
+    }, [user.token])
 
 
     const handleSumbit = async (e) => {

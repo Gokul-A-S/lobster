@@ -11,6 +11,7 @@ import Equipment from './pages/Equipment';
 import LabView from './pages/LabView';
 import Alerts from './pages/Alerts';
 import Reports from './pages/Reports';
+import Overview from './pages/Overview';
 
 function App() {
   const {user}=useAuthContext()
@@ -30,6 +31,7 @@ function App() {
             <Route path="/lab/:id" exact element={user?<LabView/>:<Login />} />
             <Route path="/alerts" exact element={user?<Alerts/>:<Login />} />
             <Route path="/reports" exact element={user?<Reports/>:<Login />} />
+            <Route path="/overview" exact element={user?<Overview/>:<Login />} />
             <Route path="*" element={<h1>404 Not Found</h1>} />
 
 

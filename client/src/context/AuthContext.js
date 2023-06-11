@@ -22,7 +22,7 @@ export const AuthContextProvider=({children})=>{
             dispatch({type:'LOGIN',payload:user})
         }
     },[])
-    console.log("AuthContextState ",state)
+    //console.log("AuthContextState ",state)
     return <AuthContext.Provider value={{...state,dispatch}}>
         {children}
     </AuthContext.Provider>
