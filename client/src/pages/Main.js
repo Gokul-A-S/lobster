@@ -9,31 +9,7 @@ const Home = () => {
     const { workouts, dispatch } = useEquipmentsContext()
     const { user } = useAuthContext()
     useEffect(() => {
-        const getLabs = async () => {
-            try {
-                const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/labs`, {
-                    headers: {
-                        "Authorization": `Bearer ${user.token}`
-                    }
-                })
-                const json = await response.json()
-                if (response.ok) {
-                    dispatch({ type: 'SET_LABS', payload: json })
-                }
-                else {
-                    console.log(json)
-                }
-            }
-            catch (error) {
-                console.log(error.message)
-            }
-        }
-        if (user) {
-            getLabs()
-        }
-        else {
-            console.log("Authorization required")
-        }
+        
         const getWorkouts = async () => {
             try {
                 const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments`, {
@@ -64,7 +40,6 @@ const Home = () => {
 
 
     }, [dispatch,user])
-        
 
    if(!eqpCopy){
     return (

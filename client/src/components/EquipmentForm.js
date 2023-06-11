@@ -1,9 +1,8 @@
 import { useState } from "react"
 import { useEquipmentsContext } from "../hooks/useEquipmentContext"
 import { useAuthContext } from "../hooks/useAuthContext"
-import {useLabContext} from "../hooks/useLabContext"
+
 const EquipmentForm = () => {
-    const {labs} = useLabContext()
     const { dispatch } = useEquipmentsContext()
     const { user } = useAuthContext()
     const [id, setID] = useState('')
@@ -20,7 +19,7 @@ const EquipmentForm = () => {
     const [lab, setLab] = useState('')
     const [error, setError] = useState(null)
 
-   
+
     const handleSumbit = async (e) => {
         e.preventDefault()
         if (!user) {
@@ -91,12 +90,7 @@ const EquipmentForm = () => {
                 <label>Location</label>
                 <input type="text" required value={location} onChange={(e) => setLocation(e.target.value)} />
                 <label>Lab</label>
-                <select value={lab} onChange={(e) => setLab(e.target.value)}>
-                    <option value="">Select Lab</option>
-                    {labs.map((lab) => (
-                        <option key={lab._id} value={lab.code}>{lab.name}</option>
-                    ))}
-                </select>
+                <input type="text" required value={lab} onChange={(e) => setLab(e.target.value)} />
                 <button>Add Equipment</button>
                 {error && <div className="error"><p>{error}</p>
                 </div>}
