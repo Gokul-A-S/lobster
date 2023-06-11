@@ -45,20 +45,25 @@ const WorkoutDetails = ({ workout }) => {
 
 
     const handleClick = async () => {
-        if (!user) {
-            console.log("Authorization Required")
-            return
-        }
-        const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments/${workout._id}`, {
-            headers: {
-                'Authorization': `Bearer ${user.token}`
-            },
-            method: 'DELETE'
-        })
-        const json = await response.json()
+        if (window.confirm("Are you sure you want to delete this equipment?")) {
+            if (!user) {
+                console.log("Authorization Required")
+                return
+            }
+            const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments/${workout._id}`, {
+                headers: {
+                    'Authorization': `Bearer ${user.token}`
+                },
+                method: 'DELETE'
+            })
+            const json = await response.json()
 
-        if (response.ok) {
-            dispatch({ type: 'DELETE_EQP', payload: json })
+            if (response.ok) {
+                dispatch({ type: 'DELETE_EQP', payload: json })
+            }
+        }
+        else {
+            return
         }
 
     }

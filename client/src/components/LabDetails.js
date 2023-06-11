@@ -8,7 +8,7 @@ const LabDetails = ({ labs }) => {
     const { dispatch } = useLabContext()
 
     const handleClick = async () => {
-
+        if(window.confirm("Are you sure you want to delete this lab?")){
         try {
             if (!user) {
                 console.log("Authorization required")
@@ -31,6 +31,10 @@ const LabDetails = ({ labs }) => {
         catch (error) {
             console.log(error.message)
         }
+    }
+    else{
+        return
+    }
 
 
     }
