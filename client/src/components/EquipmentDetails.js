@@ -112,7 +112,7 @@ const WorkoutDetails = ({ workout }) => {
                         <option key={lab._id} value={lab.code}>{lab.code}</option>
                     ))}
                 </select>
-                <button onClick={gotoEquipment}>View</button>
+                <button onClick={gotoEquipment}>Details</button>
                 <button onClick={allocate}>Allocate</button>
             </div>
         </div>
