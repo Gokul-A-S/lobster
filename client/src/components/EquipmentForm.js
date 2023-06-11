@@ -14,7 +14,7 @@ const EquipmentForm = ({labNo}) => {
     const [brand, setBrand] = useState('')
     const [dop, setDOP] = useState('')
     const [warranty, setWarranty] = useState('')
-    const [condition, setCondition] = useState('')
+    const [condition, setCondition] = useState('Working')
     const [location, setLocation] = useState('')
     const [lab, setLab] = useState('')
     const [error, setError] = useState(null)
@@ -81,7 +81,12 @@ const EquipmentForm = ({labNo}) => {
                 <label>Warranty</label>
                 <input type="date" required value={warranty} onChange={(e) => setWarranty(e.target.value)} />
                 <label>Condition</label>
-                <input type="text" required value={condition} onChange={(e) => setCondition(e.target.value)} />
+                <select value={condition} onChange={(e) => setCondition(e.target.value)}>
+                    <option value="Working">Working</option>
+                    <option value="Not Working">Not Working</option>
+                    <option value="Under Repair">Under Repair</option>
+                    <option value="Unavailable">Disposed</option>
+                </select>
                 <label>Location</label>
                 <input type="text" required value={location} onChange={(e) => setLocation(e.target.value)} />
                 <label>Lab</label>
