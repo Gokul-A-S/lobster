@@ -468,3 +468,17 @@ div.lab-list {
   margin-bottom: 50px;
   outline: none;
 }
+.workout-form select{
+  
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+}
+

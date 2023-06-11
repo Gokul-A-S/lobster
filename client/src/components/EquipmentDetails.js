@@ -12,8 +12,6 @@ const WorkoutDetails = ({ workout }) => {
     const { user } = useAuthContext()
     useEffect(() => {
 
-
-
         const getLabs = async () => {
             try {
                 const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/labs`, {

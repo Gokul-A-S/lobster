@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { useEquipmentsContext } from "../hooks/useEquipmentContext"
 import { useAuthContext } from "../hooks/useAuthContext"
-
-const EquipmentForm = ({labNo}) => {
+import {useLabContext} from "../hooks/useLabContext"
+const EquipmentForm = () => {
+    const {labs} = useLabContext()
     const { dispatch } = useEquipmentsContext()
-    const {user}=useAuthContext()
+    const { user } = useAuthContext()
     const [id, setID] = useState('')
     const [name, setName] = useState('')
     const [type, setType] = useState('')
@@ -14,19 +15,19 @@ const EquipmentForm = ({labNo}) => {
     const [brand, setBrand] = useState('')
     const [dop, setDOP] = useState('')
     const [warranty, setWarranty] = useState('')
-    const [condition, setCondition] = useState('Working')
+    const [condition, setCondition] = useState('')
     const [location, setLocation] = useState('')
     const [lab, setLab] = useState('')
     const [error, setError] = useState(null)
-    
 
+   
     const handleSumbit = async (e) => {
         e.preventDefault()
-        if(!user){
+        if (!user) {
             setError("Authorization Required")
             return
         }
-        const equipment = { id, name, type,processor,ram,hdd, brand, dop, warranty, condition, location, lab }
+        const equipment = { id, name, type, processor, ram, hdd, brand, dop, warranty, condition, location, lab }
         const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments`, {
             method: 'POST',
             body: JSON.stringify(equipment),
@@ -71,11 +72,11 @@ const EquipmentForm = ({labNo}) => {
                 <label>Type:</label>
                 <input type="text" required value={type} onChange={(e) => setType(e.target.value)} />
                 <label>Processor</label>
-                <input type="text"  value={processor} onChange={(e) => setProcessor(e.target.value)} />
+                <input type="text" value={processor} onChange={(e) => setProcessor(e.target.value)} />
                 <label>RAM</label>
-                <input type="text"  value={ram} onChange={(e) => setRam(e.target.value)} />
+                <input type="text" value={ram} onChange={(e) => setRam(e.target.value)} />
                 <label>HDD</label>
-                <input type="text"  value={hdd} onChange={(e) => setHDD(e.target.value)} />
+                <input type="text" value={hdd} onChange={(e) => setHDD(e.target.value)} />
                 <label>Purchase</label>
                 <input type="date" required value={dop} onChange={(e) => setDOP(e.target.value)} />
                 <label>Warranty</label>
@@ -85,12 +86,17 @@ const EquipmentForm = ({labNo}) => {
                     <option value="Working">Working</option>
                     <option value="Not Working">Not Working</option>
                     <option value="Under Repair">Under Repair</option>
-                    <option value="Unavailable">Disposed</option>
+                    <option value="Unavailable">Unavailable</option>
                 </select>
                 <label>Location</label>
                 <input type="text" required value={location} onChange={(e) => setLocation(e.target.value)} />
                 <label>Lab</label>
-                <input type="text" required value={lab} onChange={(e) => setLab(e.target.value)} />
+                <select value={lab} onChange={(e) => setLab(e.target.value)}>
+                    <option value="">Select Lab</option>
+                    {labs.map((lab) => (
+                        <option key={lab._id} value={lab.code}>{lab.name}</option>
+                    ))}
+                </select>
                 <button>Add Equipment</button>
                 {error && <div className="error"><p>{error}</p>
                 </div>}
