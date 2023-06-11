@@ -37,7 +37,7 @@ const EquipmentForm = () => {
             }
         }
         getLab()
-    }, [user.token])
+    }, [user.token, labs])
 
 
     const handleSumbit = async (e) => {
