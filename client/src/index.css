@@ -113,7 +113,7 @@ header span {
 .workout-details p {
   margin: 0;
   font-size: 0.9em;
-  color: #555;
+  color: #333;
 }
 
 .workout-details span {
@@ -388,6 +388,10 @@ div.lab-list {
   display: flex;
 }
 
+input {
+  outline: none;
+}
+
 .info h2{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -416,14 +420,19 @@ div.lab-list {
 .lab {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 80vh;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  font-size: 1.2em;
   color: var(--primary);
-  text-align: center;
 }
 
 .value {
-  color: #000;
+  color: #555;
   font-weight: 600;
 }
 
@@ -467,4 +476,9 @@ div.lab-list {
 .select-bar {
   margin-bottom: 50px;
   outline: none;
+}
+
+.ri-computer-line {
+  font-size: 50px;
+  color: #222;
 }
