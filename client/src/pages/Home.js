@@ -5,6 +5,10 @@ const Home = () => {
     return (
         <div className="home-pages">
             <div className="dashboard">
+            <div className="container">
+                    <h3>Overview</h3>
+                    <Link to="/overview">Main</Link>
+                </div>
                 <div className="container">
                     <h3>Main Stock Register</h3>
                     <Link to="/main">Main</Link>

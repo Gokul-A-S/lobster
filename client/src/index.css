@@ -60,17 +60,17 @@ header span {
 
 .home-pages .dashboard {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  height: 75vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 80px;
+  height: 50vh;
   justify-content: center;
-  font-size: 26px;
+  font-size: 25px;
 }
 
 .home-pages .container {
   background-color: #ffffff;
-  height: 100%;
-  width: 95%;
+  height: 80%;
+  width: 80%;
   padding: 20px;
   justify-content: space-between;
   border-radius: 10px;
