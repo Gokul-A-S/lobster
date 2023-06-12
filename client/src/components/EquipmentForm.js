@@ -32,7 +32,9 @@ const EquipmentForm = () => {
             }
             if (response.ok) {
                 setLabs(json)
-                setLab(json[0].name)
+                if (json[0]){
+                    setLab(json[0].name)
+                }
             }
         }
         getLab()
