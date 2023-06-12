@@ -40,11 +40,6 @@ const equipmentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-   
-    location: {
-        type: String,
-        required: true,
-    },
     lab: {
         type: String,
         required: true,

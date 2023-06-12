@@ -5,30 +5,30 @@ const Home = () => {
     return (
         <div className="home-pages">
             <div className="dashboard">
-            <div className="container">
-                    <h3>Overview</h3>
-                    <Link to="/overview">Main</Link>
+                <div className="container">
+                    <p>Overview</p>
+                    <Link to="/overview">Overview</Link>
                 </div>
                 <div className="container">
-                    <h3>Main Stock Register</h3>
+                    <p>Main Stock Register</p>
                     <Link to="/main">Main</Link>
                 </div>
                 <div className="container">
 
-                    <h3>Labs</h3>
+                    <p>Labs</p>
                     <Link to="/lab">Labs</Link>
                 </div>
                 <div className="container">
 
-                    <h3>Reports</h3>
+                    <p>Reports</p>
                     <Link to="/reports">Reports</Link>
                 </div>
                 <div className="container">
 
-                    <h3>Alerts</h3>
+                    <p>Alerts</p>
                     <Link to="/alerts">Alerts</Link>
                 </div>
-                
+
             </div>
 
         </div>

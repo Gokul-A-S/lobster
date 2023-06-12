@@ -14,10 +14,10 @@ const EquipmentForm = () => {
     const [brand, setBrand] = useState('')
     const [dop, setDOP] = useState('')
     const [warranty, setWarranty] = useState('')
-    const [condition, setCondition] = useState('')
+    const [condition, setCondition] = useState('Working')
     const [location, setLocation] = useState('')
-    const [lab, setLab] = useState('')
     const [labs, setLabs] = useState([])
+    const [lab, setLab] = useState('')
     const [error, setError] = useState(null)
     useEffect(() => {
         const getLab = async () => {
@@ -32,6 +32,7 @@ const EquipmentForm = () => {
             }
             if (response.ok) {
                 setLabs(json)
+                setLab(json[0].name)
             }
         }
         getLab()
@@ -99,18 +100,16 @@ const EquipmentForm = () => {
                 <label>Warranty</label>
                 <input type="date" required value={warranty} onChange={(e) => setWarranty(e.target.value)} />
                 <label>Condition</label>
-                <select value={condition} onChange={(e) => setCondition(e.target.value)}>
+                <select  onChange={(e) => setCondition(e.target.value)}>
                     <option value="Working">Working</option>
                     <option value="Not Working">Not Working</option>
                     <option value="Under Repair">Under Repair</option>
                     <option value="Unavailable">Unavailable</option>
                 </select>
-                <label>Location</label>
-                <input type="text" required value={location} onChange={(e) => setLocation(e.target.value)} />
                 <label>Lab</label>
-                <select value={lab} onChange={(e) => setLab(e.target.value)}>
-                    {labs.map((lab) => (
-                        <option key={lab._id} value={lab.code}>{lab.name}</option>
+                <select  onChange={(e) => setLab(e.target.value)}>
+                    {labs.map((labt) => (
+                        <option key={labt._id} value={labt.code}>{labt.name}</option>
                     ))}
                 </select>
                 <button>Add Equipment</button>

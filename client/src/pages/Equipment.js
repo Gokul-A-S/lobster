@@ -1,15 +1,11 @@
 import { useLocation } from "react-router-dom";
-import moment from 'moment';
-import 'remixicon/fonts/remixicon.css'
+import { format } from 'date-fns'
 const Equipment = () => {
     const eqp = useLocation().state.workout
-    //console.log(eqp)
-    const purchaseDate = moment(eqp.dop).format('DD-MM-YYYY')
-    const warrantyDate = moment(eqp.warranty).format('DD-MM-YYYY')
+    const purchaseDate = format(new Date(eqp.dop), 'dd-MM-yyyy')
+    const warrantyDate = format(new Date(eqp.dop), 'dd-MM-yyyy')
     return (
         <div className="equipment-view">
-            <div className="image">
-            <i className="ri-computer-line"></i></div>
             <div className="info">
                 <h2>Name <span className="value">{eqp.name}</span></h2>
                 <h2>Type <span className="value">{eqp.type}</span></h2>
@@ -17,7 +13,6 @@ const Equipment = () => {
                 <h2>Purchase Date <span className="value">{purchaseDate}</span></h2>
                 <h2>Warranty <span className="value">{warrantyDate}</span></h2>
                 <h2>Condition <span className="value">{eqp.condition}</span></h2>
-                <h2>Location <span className="value">{eqp.location}</span></h2>
                 <h2>Lab <span className="value">{eqp.lab}</span></h2>
 
             </div>

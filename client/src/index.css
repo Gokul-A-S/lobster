@@ -68,7 +68,8 @@ header span {
 }
 
 .home-pages .container {
-  background-color: #ffffff;
+  background: linear-gradient(to bottom right, rgb(74, 144, 226), #7044ff);
+
   height: 80%;
   width: 80%;
   padding: 20px;
@@ -79,16 +80,17 @@ header span {
 }
 
 .home-pages a {
-  text-decoration: none;
-  color: #fff;
-  background: var(--primary);
-  padding: 10px 20px 10px 20px;
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
   border-radius: 4px;
-  display: inline-block;
-  margin: 20px 20px;
-  font-size: 0.9em;
-  font-weight: 600;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+  margin: 10px 10px;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .home-pages a:hover {
