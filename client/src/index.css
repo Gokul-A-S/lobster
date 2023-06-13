@@ -62,14 +62,13 @@ header span {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
   gap: 80px;
-  height: 50vh;
+  height: 80vh;
   justify-content: center;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .home-pages .container {
   background: linear-gradient(to bottom right, rgb(74, 144, 226), #7044ff);
-
   height: 80%;
   width: 80%;
   padding: 20px;
@@ -95,6 +94,7 @@ header span {
 
 .home-pages a:hover {
   opacity: 0.8;
+  
 }
 
 .workout-details {
