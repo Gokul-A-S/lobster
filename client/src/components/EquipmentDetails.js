@@ -8,6 +8,7 @@ const WorkoutDetails = ({ workout }) => {
     const navigate = useNavigate()
     const [selectedOption, setSelectedOption] = useState('')
     const [labs, setLabs] = useState([])
+    const[allocated,setAllocated]=useState(false)
     const { dispatch } = useEquipmentsContext()
     const { user } = useAuthContext()
     useEffect(() => {
@@ -40,8 +41,7 @@ const WorkoutDetails = ({ workout }) => {
             console.log("Authorization required")
         }
 
-    }
-        , [user])
+    }, [user])
 
 
     const handleClick = async () => {
@@ -68,6 +68,7 @@ const WorkoutDetails = ({ workout }) => {
 
     }
     const allocate = async (e) => {
+        setAllocated(true)
         try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments/${workout._id}`, {
                 method: 'PATCH',
@@ -82,12 +83,11 @@ const WorkoutDetails = ({ workout }) => {
             const json = await response.json()
             if (response.ok) {
                 console.log('Allocation Successful')
-                console.log(json)
                 if (window.location.pathname === '/lab') {
                     navigate(`/main`, { state: { eqp: json } })
+                    console.log(json)
                 }
                 else {
-                    console.log(window.history.pathname)
                     navigate(`/main`)
                 }
             }
@@ -100,9 +100,14 @@ const WorkoutDetails = ({ workout }) => {
             console.log(error.message)
         }
     }
+    //
     const gotoEquipment = () => {
+        
+        if (allocated) {
+            workout.lab = selectedOption
+        }
         navigate(`/equipment`, { state: { workout } })
-
+        //
     }
     return (
 
@@ -111,7 +116,7 @@ const WorkoutDetails = ({ workout }) => {
             <p><strong>Purchase:</strong>{format(new Date(workout.dop), 'dd-MM-yyyy')}</p>
             <p><strong>Type:</strong>{workout.type}</p>
             <p><strong>ID:</strong>{workout.id}</p>
-            
+
             <p>{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
             <span className="material-symbols-outlined" onClick={handleClick}>Delete</span>
             <div className="lab-list">
