@@ -1,11 +1,9 @@
-import logo from '../logo.png'
+//import logo from '../logo.png'
 import { format } from 'date-fns'
 const AlertDetails = ({alerts}) => {
     return (
         <div className="computer-logo">
-                    <div className="lab-computer">
-                        <img src={logo} alt="equipment" /></div>
-                    <div className="info">
+                    <div className="alert-info">
                         <h2>Name: <span className="value">{alerts.name}</span></h2>
                         <h2>Type: <span className="value">{alerts.type}</span></h2>
                         <h2>Brand: <span className="value">{alerts.brand}</span></h2>
