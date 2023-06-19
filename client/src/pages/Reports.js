@@ -77,7 +77,9 @@ const Reports = () => {
     return (
         <div className='report-page'>
             <h1>Report Generation</h1>
-            <Select
+            <div className="select-container">
+            <div className='select-sub'>
+                <Select
                 isMulti
                 options={options}
                 value={selectedOptions}
@@ -85,8 +87,11 @@ const Reports = () => {
                 getOptionLabel={customOptionLabel}
                 className='select-bar'
             />
-            <PDFview data={data}/>
             <button onClick={generateReport}>Generate Report</button>
+            </div>
+            <PDFview data={data}/>
+            </div>
+
             
         </div>
     )

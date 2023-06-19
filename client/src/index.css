@@ -445,43 +445,8 @@ input {
   align-items: center;
 }
 
-.report-page {
-  max-width: 1000px;
-  margin: 0 auto;
-  justify-content: center;
-  text-align: center;
-}
 
-.report-page h1 {
-  color: var(--primary);
-  margin-bottom: 20px;
-  margin-top: -12px;
-  font-weight: bold;
-  font-size: 40px;
-}
 
-.report-page button {
-  padding: 10px 20px;
-  display: block;
-  margin: 20px auto;
-  color: #fff;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  background-color: var(--primary);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  font-size: 24px;
-}
-
-.report-page button:hover {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.select-bar {
-  margin-bottom: 50px;
-  outline: none;
-}
 .workout-form select{
   
   outline: none;
@@ -549,7 +514,8 @@ h3 {
 .search-container{
   display: flex;
   justify-content: left;
-  align-items: center;
+  gap: 10px;
+  align-items: baseline;
   margin: 0 auto;
   padding: 20px;
   background: #fff;
@@ -593,6 +559,82 @@ h3 {
   font-size: 1em;
   text-align: left;
 }
+.pdf-preview{
+  background-color: #1aac83;
+  padding: 2px;
+  border-radius: 15px;
+  font-size: 1em;
+  width: 80%;
+}
+.select-container{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  font-size: 1.2em;
+  width: 96%;
+}
+.select-bar{
+  align-self: start;
+  width: 90%;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.report-page {
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.report-page h1 {
+  margin-bottom: 20px;
+  margin-top: -12px;
+  font-weight: bold;
+  font-size: 40px;
+}
+.select-sub{
+  width: 100%;
+  height: 100%;
+  align-self: start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  transition: box-shadow 0.3s;
+  gap: 10px;
+}
+
+.select-sub:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.select-sub button{
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 10px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+  margin: 10px 10px;
+  transition: all 0.2s ease-in-out;
+  width: 30%;
+  margin-right: 100px;
+}
+.select-sub button:hover{
+  background: var(--primary);
+  color: #fff;
+}
+
+
 
 @keyframes fade-in {
   0% { opacity: 0; }

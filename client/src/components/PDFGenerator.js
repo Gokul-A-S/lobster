@@ -15,11 +15,12 @@ const styles = StyleSheet.create({
     fontSize: "22px",
     marginBottom: "40px",
     marginTop: "0px",
+    
   },
 });
 
 const PDFView = ({ data }) => (
-  <PDFViewer width={600} height={600}>
+  <PDFViewer className='pdf-preview' width={600} height={600}>
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
