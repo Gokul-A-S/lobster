@@ -44,7 +44,8 @@ const WorkoutDetails = ({ workout }) => {
     }, [user])
 
 
-    const handleClick = async () => {
+    const handleClick = async (e) => {
+        e.preventDefault()
         if (window.confirm("Are you sure you want to delete this equipment?")) {
             if (!user) {
                 console.log("Authorization Required")

@@ -1,5 +1,5 @@
 const express = require('express')
-const { createEquipment, getEquipment, getEquipments, deleteEquipment, updateEquipment } = require('../controllers/EquipmentController')
+const { searchEquipment,createEquipment, getEquipment, getEquipments, deleteEquipment, updateEquipment } = require('../controllers/EquipmentController')
 const requireAuth = require('../middleware/requireAuth')
 const router = express.Router()
 
@@ -10,6 +10,8 @@ router.get('/', getEquipments)
 router.get('/:id', getEquipment)
 
 router.post('/', createEquipment)
+
+router.post('/search', searchEquipment)
 
 router.delete('/:id', deleteEquipment)
 

@@ -75,5 +75,16 @@ const updateEquipment = async (req, res) => {
         return res.status(400).json(error.message)
     }
 }
+const searchEquipment = async (req, res) => {
+    const name=req.body.name
+    try {
+        const result=await Equipment.find({name:{$regex:name,$options:'i'}})
+        res.status(200).json(result)
+    }
+    catch (error) {
+        return res.status(400).json(error.message)
+    }
+}
 
-module.exports = { createEquipment, getEquipments, getEquipment,deleteEquipment,updateEquipment }
+
+module.exports = { createEquipment, getEquipments, getEquipment,deleteEquipment,updateEquipment,searchEquipment }

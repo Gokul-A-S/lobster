@@ -23,19 +23,22 @@ const Overview = () => {
     }, [user])
 
 return (
-    <div>
-        <h1>Overview</h1>
-        <div className='overview'>
-            <div className='overview-item'>
-                <h2>Total Equipments</h2>
-                <h3>{stats.totalCount}</h3>
-                <h2>Total Working</h2>
-                <h3>{stats.totalWorking}</h3>
-                <h2>Total Labs</h2>
-                <h3>{stats.totalLabs}</h3>
-                </div>
-            </div>
+    <div class="container">
+    <div class="overview">
+      <div class="overview-item">
+        <h2>Total Equipments</h2>
+        <h3>{stats.totalCount}</h3>
+      </div>
+      <div class="overview-item">
+        <h2>Total Working</h2>
+        <h3>{stats.totalWorking}</h3>
+      </div>
+      <div class="overview-item">
+        <h2>Total Labs</h2>
+        <h3>{stats.totalLabs}</h3>
+      </div>
     </div>
+  </div>
 )
 }
 export default Overview
