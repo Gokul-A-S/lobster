@@ -68,6 +68,8 @@ header span {
   background-color: #ffff;
   border-radius: 10px;
   padding: 20px;
+  width: 70%;
+  height: 70%;
   
 }
 
@@ -81,6 +83,7 @@ header span {
   flex-direction: column;
   display:flex;
   margin-bottom: 40px;
+
 }
 
 
