@@ -60,38 +60,39 @@ header span {
 }
 
 .home-pages .dashboard {
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-  gap: 40px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 25px;
   font-size: 25px;
   background-color: #ffff;
   border-radius: 10px;
   padding: 20px;
+  
 }
 
-.home-pages .container {
+.dashboard .container {
   background: linear-gradient(to bottom right, rgb(74, 144, 226), #7044ff);
-  height: 70%;
-  width: 70%;
+  height: 75%;
+  width: 60%;
   padding: 20px;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 12px;
   flex-direction: column;
   display:flex;
+  margin-bottom: 40px;
 }
+
 
 
 .home-pages a {
   background: #fff;
   color: var(--primary);
-  border: 4px solid #333;
-  padding: 5px 5px 5px 5px;
+  border: 3px solid #333;
   border-radius: 100px;
   font-family: "Poppins";
   cursor: pointer;
   font-size: .8em;
-  margin: 10px 10px;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
 }
