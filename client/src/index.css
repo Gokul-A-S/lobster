@@ -62,7 +62,7 @@ header span {
 .home-pages .dashboard {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr ;
-  gap: 100px;
+  gap: 40px;
   justify-content: center;
   font-size: 25px;
   background-color: #ffff;
@@ -72,8 +72,8 @@ header span {
 
 .home-pages .container {
   background: linear-gradient(to bottom right, rgb(74, 144, 226), #7044ff);
-  height: 80%;
-  width: 80%;
+  height: 70%;
+  width: 70%;
   padding: 20px;
   justify-content: space-between;
   border-radius: 10px;
@@ -81,15 +81,16 @@ header span {
   display:flex;
 }
 
+
 .home-pages a {
   background: #fff;
   color: var(--primary);
-  border: 2px solid var(--primary);
-  padding: 6px 10px;
+  border: 4px solid #333;
+  padding: 5px 5px 5px 5px;
   border-radius: 100px;
   font-family: "Poppins";
   cursor: pointer;
-  font-size: 1em;
+  font-size: .8em;
   margin: 10px 10px;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
