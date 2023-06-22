@@ -10,6 +10,7 @@ const Home = () => {
     const { user } = useAuthContext()
     const [search, setSearch] = useState(workouts)
     useEffect(() => {
+        handleReset()
 
         const getWorkouts = async () => {
             try {
@@ -67,7 +68,6 @@ const Home = () => {
 
     }
     const handleReset = async (e) => {
-        e.preventDefault()
         try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_URI}/api/equipments`, {
                 headers: {
