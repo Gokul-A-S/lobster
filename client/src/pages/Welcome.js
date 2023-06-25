@@ -14,7 +14,7 @@ const Welcome = () => {
             <h1>Welcome</h1>
             <div className='welcome-logo'>
             <BarLoader 
-            color="#36d7b7"
+            color="#4a90e2"
             width={250}
             />
             </div>
