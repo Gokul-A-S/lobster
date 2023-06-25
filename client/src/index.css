@@ -435,6 +435,13 @@ input {
   outline: none;
 }
 
+.info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.2em;
+
+}
+
 .info h2{
   display: grid;
   grid-template-columns: 1fr 1fr;
