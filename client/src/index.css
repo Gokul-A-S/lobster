@@ -79,7 +79,7 @@ header span {
   background: linear-gradient(to bottom right, rgb(74, 144, 226), #7044ff);
   /*background: var(--primary);*/
   height: 70%;
-  width: 70%;
+  width: 65%;
   padding: 20px;
   justify-content: space-between;
   border-radius: 10px;

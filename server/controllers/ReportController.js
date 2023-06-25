@@ -15,7 +15,7 @@ const getReport = async (req, res) => {
 const getStats = async (req, res) => {
     try {
         const totalCount = await Equipment.countDocuments()
-        const totalWorking = await Equipment.countDocuments({ condition: 'working' })
+        const totalWorking = await Equipment.countDocuments({ condition: 'Working' })
         const totalLabs = await Lab.countDocuments()
         const json  ={
             'totalCount': totalCount,
