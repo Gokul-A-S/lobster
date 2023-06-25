@@ -28,6 +28,11 @@ const Home = () => {
                     <p>Alerts</p>
                     <Link to="/alerts">Alerts</Link>
                 </div>
+                <div className="container">
+
+                    <p>Help</p>
+                    <Link to="/help">Help</Link>
+                </div>
 
             </div>
 
