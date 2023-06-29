@@ -14,9 +14,17 @@ const Equipment = () => {
                 <h2>Warranty <span className="value">{warrantyDate}</span></h2>
                 <h2>Condition <span className="value">{eqp.condition}</span></h2>
                 <h2>Lab <span className="value">{eqp.lab}</span></h2>
-                <h2>Processor <span className="value">{eqp.processor}</span></h2>
-                <h2>Ram <span className="value">{eqp.ram}GB</span></h2>
-                <h2>HDD <span className="value">{eqp.hdd}GB</span></h2>
+                {
+                    eqp.processor!== '' && <h2>Processor <span className="value">{eqp.processor}</span></h2>
+                }
+                
+                {
+                    eqp.ram!=='' && <h2>Ram <span className="value">{eqp.ram}GB</span></h2>
+                }
+                {
+                    eqp.hdd!=='' && <h2>HDD <span className="value">{eqp.hdd}GB</span></h2>
+                }
+                
             </div>
         </div>
 

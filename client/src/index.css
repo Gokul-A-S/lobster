@@ -13,7 +13,7 @@ body {
   font-family: "Poppins";
 }
 
-header div{
+header div {
   background: #fff;
   max-width: 98%;
 }
@@ -62,8 +62,8 @@ header span {
 }
 
 .home-pages .dashboard {
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
   justify-content: center;
   font-size: 25px;
@@ -84,7 +84,7 @@ header span {
   justify-content: space-between;
   border-radius: 10px;
   flex-direction: column;
-  display:flex;
+  display: flex;
   color: #fff;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
@@ -110,7 +110,7 @@ header span {
 
 .home-pages a:hover {
   opacity: 0.8;
-  
+
 }
 
 .workout-details {
@@ -189,9 +189,10 @@ header span {
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
-.welcome-logo{
+
+.welcome-logo {
   padding: 30px;
-  margin-left: 22%;
+  margin-left: 25%;
 
 }
 
@@ -289,7 +290,7 @@ header span {
 .nav-buttons a {
   background: #fff;
   background: linear-gradient(white, white) padding-box,
-  linear-gradient(to bottom right, rgb(74, 144, 226), #7044ff) border-box;
+    linear-gradient(to bottom right, rgb(74, 144, 226), #7044ff) border-box;
   border: 2px solid transparent;
   /*color: #1aac83;
   border: 2px solid #1aac83;*/
@@ -365,7 +366,7 @@ div.lab-list {
   grid-template-columns: 1fr 1fr;
   padding-bottom: 0;
   padding: 0.5rem;
-  margin: 0rem 0rem 0rem 38rem;
+  margin: 0rem 0rem 0rem 15rem;
   gap: 5px;
   justify-content: center;
   align-items: baseline;
@@ -437,10 +438,10 @@ input {
 
 
 
-.info h2{
+.info h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  text-align:right;
+  text-align: right;
   gap: 20px;
 }
 
@@ -448,7 +449,7 @@ input {
   text-align: left;
 }
 
-.equipment-view{
+.equipment-view {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -481,14 +482,14 @@ input {
   font-weight: 600;
 }
 
-.lab-details h2{
+.lab-details h2 {
   align-items: center;
 }
 
 
 
-.workout-form select{
-  
+.workout-form select {
+
   outline: none;
   background-color: #fff;
   border-radius: 4px;
@@ -501,15 +502,16 @@ input {
   font-size: 1em;
 }
 
-img{
+img {
   width: 20%;
   height: 20%;
   object-fit: cover;
   border-radius: 4px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
   margin-left: 45%;
-  
+
 }
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -551,7 +553,8 @@ h2 {
 h3 {
   color: #888;
 }
-.search-container{
+
+.search-container {
   display: flex;
   justify-content: left;
   gap: 10px;
@@ -565,6 +568,7 @@ h3 {
   color: var(--primary);
   width: 96%;
 }
+
 .reset-btn {
   padding: 10px 20px;
   margin-left: 10px;
@@ -578,17 +582,19 @@ h3 {
   font-size: 16px;
   font-weight: 200;
 }
+
 .reset-btn:hover {
   /* background-color: #333; */
   opacity: 0.9;
 }
+
 .search-field {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
   transition: box-shadow 0.3s;
-  
+
 }
 
 .search {
@@ -599,7 +605,8 @@ h3 {
   outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-.alert-info{
+
+.alert-info {
   background-color: #ffff;
   padding: 20px;
   margin-bottom: 10px;
@@ -607,15 +614,17 @@ h3 {
   font-size: 1em;
   text-align: left;
 }
-.pdf-preview{
+
+.pdf-preview {
   background-image: linear-gradient(to bottom right, rgb(74, 144, 226), #7044ff);
-  color: transparent;  
+  color: transparent;
   padding: 2px;
   border-radius: 15px;
   font-size: 1em;
   width: 80%;
 }
-.select-container{
+
+.select-container {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -626,12 +635,13 @@ h3 {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
   font-size: 1.2em;
   width: 96%;
+  flex-direction: column;
 }
-.select-bar{
-  align-self: start;
+
+.select-bar {
+  align-self: center;
   width: 90%;
-  margin-left: 10px;
-  margin-top: 20px;
+  margin: 0 auto;
 }
 
 .report-page {
@@ -647,7 +657,8 @@ h3 {
   font-weight: bold;
   font-size: 40px;
 }
-.select-sub{
+
+.select-sub {
   width: 100%;
   height: 100%;
   align-self: start;
@@ -664,8 +675,8 @@ h3 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.select-sub button{
-  color: var(--primary);
+.select-sub button {
+  color: #fff;
   border: 2px solid var(--primary);
   padding: 10px 10px;
   border-radius: 4px;
@@ -674,22 +685,35 @@ h3 {
   font-size: 1em;
   margin: 10px 10px;
   transition: all 0.2s ease-in-out;
-  width: 30%;
+  width: min(30%, 300px);
   margin-right: 100px;
-}
-.select-sub button:hover{
   background: var(--primary);
-  color: #fff;
+}
+
+.select-sub button:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 
 
 @keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes slide-up {
-  0% { transform: translateY(50px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

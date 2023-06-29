@@ -1,5 +1,6 @@
 //import logo from '../logo.png'
 import { format } from 'date-fns'
+
 const AlertDetails = ({alerts}) => {
     return (
         <div className="computer-logo">
