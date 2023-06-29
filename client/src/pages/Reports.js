@@ -43,7 +43,7 @@ const Reports = () => {
     );
     const options = equipments.map((equipment) => ({
         value: equipment._id,
-        label: equipment.name,
+        label: equipment.name+'-'+equipment.id,
         description: equipment.code,
     }));
     const generateReport = async () => {

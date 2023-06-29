@@ -435,12 +435,7 @@ input {
   outline: none;
 }
 
-.info{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  font-size: 1.2em;
 
-}
 
 .info h2{
   display: grid;
@@ -670,7 +665,6 @@ h3 {
 }
 
 .select-sub button{
-  background: #fff;
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 10px 10px;

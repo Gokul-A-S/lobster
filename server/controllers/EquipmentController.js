@@ -1,15 +1,14 @@
-const { c } = require('tar')
 const Equipment = require('../models/Equipment')
 const mongoose = require('mongoose')
 
 const createEquipment = async (req, res) => {
-    const { id,name,type,brand,processor,ram,hdd,dop,warranty,condition,location,lab } = req.body
+    const { id, name, type, brand, processor, ram, hdd, dop, warranty, condition, location, lab } = req.body
     try {
-        const equipment = await Equipment.create({ id,name,type,processor,ram,hdd,brand,dop,warranty,condition,location,lab })
+        const equipment = await Equipment.create({ id, name, type, processor, ram, hdd, brand, dop, warranty, condition, location, lab })
         res.status(200).json(equipment)
     }
     catch (error) {
-        res.status(400).json({error:error.message})
+        res.status(400).json({ error: error.message })
     }
 }
 
@@ -55,30 +54,30 @@ const deleteEquipment = async (req, res) => {
 }
 
 const updateEquipment = async (req, res) => {
-    const {id} = req.params
-    if(!mongoose.Types.ObjectId.isValid(id)){
+    const { id } = req.params
+    if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(400).json("No such Equipment")
     }
-    try{
-        const equipment =await Equipment.findOneAndUpdate({_id:id},{
+    try {
+        const equipment = await Equipment.findOneAndUpdate({ _id: id }, {
             ...req.body
         })
 
-        if(!equipment){
+        if (!equipment) {
             return res.status(404).json("No such Equipment")
         }
-        const changedEquipment=await Equipment.find({lab:req.body.lab})
-        console.log(req.body.lab)
+        const changedEquipment = await Equipment.find({ lab: req.body.lab })
+        //console.log(req.body.condition)
         res.status(200).json(changedEquipment)
     }
-    catch(error){
+    catch (error) {
         return res.status(400).json(error.message)
     }
 }
 const searchEquipment = async (req, res) => {
-    const name=req.body.name
+    const name = req.body.name
     try {
-        const result=await Equipment.find({name:{$regex:name,$options:'i'}})
+        const result = await Equipment.find({ name: { $regex: name, $options: 'i' } })
         res.status(200).json(result)
     }
     catch (error) {
@@ -87,4 +86,4 @@ const searchEquipment = async (req, res) => {
 }
 
 
-module.exports = { createEquipment, getEquipments, getEquipment,deleteEquipment,updateEquipment,searchEquipment }
+module.exports = { createEquipment, getEquipments, getEquipment, deleteEquipment, updateEquipment, searchEquipment }
