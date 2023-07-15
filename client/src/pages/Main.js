@@ -24,7 +24,6 @@ const Home = () => {
 
                 if (response.ok) {
                     setLabs(json)
-                    console.log(labs)
                 }
                 else {
                     console.log(json)
