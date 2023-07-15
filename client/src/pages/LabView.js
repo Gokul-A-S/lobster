@@ -9,9 +9,6 @@ const LabView = () => {
                 <h2>Code <span className="value">{lab.code}</span> </h2>
                 <h2>Faculty <span className="value">{lab.fic}</span> </h2>    
             </div>
-            
-            
-
         </div>
     )
 }
