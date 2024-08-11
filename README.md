@@ -1,3 +1,3 @@
-Lab Observation Terminal
+#Lab Observation Terminal
 
-React JS Frontend and Express+NodeJS Backend
+Web application built on React and Express+NodeJS Backend with MongoDB Database for storing details of equipment details in College Laboratories.
